@@ -14,7 +14,12 @@ You already have docker & docker-compose installed on your local machine.
  
 ## Links
 
+This is kind of based on:
+
 * https://linuxhint.com/lamp_server_docker/
+
+### Other links
+
 * https://linuxconfig.org/how-to-create-a-docker-based-lamp-stack-using-docker-compose-on-ubuntu-18-04-bionic-beaver-linux
 * https://medium.com/code-kings/docker-building-a-lamp-stack-9503c62d9214
 
