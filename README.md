@@ -10,9 +10,9 @@
 
 See `docker-compose.yml` file
 
-Also see helper scripts in `./bin` folder
+Also see helper scripts in `./bin` folder - note that this assumes that the local folder name is **lamp.stack**
 
-Sub folder `./html` is just a mounted folder for html sites in case you want to edit the code outside of Docker container. Its been excluded from Git as thats not what this repo is all about.
+Sub folder `./html` is just a mounted folder for html sites in case you want to edit the code outside of Docker container. It's been excluded from Git as that's not what this repo is all about.
 
 ## Docker commands
 
