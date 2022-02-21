@@ -1,0 +1,41 @@
+version: "3.7"
+
+# @see https://linuxhint.com/lamp_server_docker/
+
+services:
+  appserver:
+    build:
+      dockerfile: php.Dockerfile
+      context: ./dockerfiles
+    restart: always
+    volumes:
+      - "./html:/var/www/html"
+    ports:
+      - 32480:80
+      - 32443:443
+
+  mysql-server:
+    image: mysql:latest
+    restart: always
+    ports:
+      - 32900:3306
+    environment:
+      TZ: "UTC"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+      MYSQL_ROOT_PASSWORD: "liveposter"
+      MYSQL_USER: "drupal"
+      MYSQL_PASSWORD: "drupal"
+      MYSQL_DATABASE: "drupal"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    links:
+      - mysql-server:db
+    ports:
+      - 9081:80
+
+volumes:
+  mysql-data:
